@@ -2,49 +2,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Good Shepherd Food Pantry</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */
-        .navbar {
-            margin-bottom: 0;
-            border-radius: 0;
-        }
+        body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:auto;
+  margin:auto;
+  background-color:#e8491d;
+}
 
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {
-            height: 450px
-        }
+/* Global */
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
 
-        /* Set gray background color and 100% height */
-        .sidenav {
-            padding-top: 20px;
-            background-color: IndianRed;
-            height: 100%;
-        }
+ul{
+  margin:auto;
+  padding:auto;
+  position: absolute;
+  left:0;
+}
 
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
 
-        /* On small screens, set height to 'auto' for sidenav and grid */
-        @media screen and (max-width: 767px) {
-            .sidenav {
-                height: auto;
-                padding: 15px;
-            }
+/* Header **/
+header{
+  background:#35424a;
+  color:#ffffff;
+  padding-top:30px;
+  min-height:70px;
+  border-bottom:#e8491d 3px solid;
+}
 
-            .row.content {
-                height: auto;
-            }
-        }
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
+  text-align:center;
+}
+
+header li{
+  float:center;
+  display:inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding{
+  float:center;
+}
+
+header #branding h1{
+  margin:auto;
+  text-align:center;
+}
+
+header nav{
+  float:right;
+  margin-top:10px;
+}
+
+header .highlight, header .current a{
+  color:#e8491d;
+  font-weight:bold;
+}
+
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
+}
+
+/* Showcase */
+#showcase{
+  min-height:400px;
+  background-color:#e8491d;
+  text-align:center;
+  color:#ffffff;
+}
+
+#showcase h1{
+  margin-top:100px;
+  font-size:55px;
+  margin-bottom:10px;
+}
+
+#showcase p{
+  font-size:20px;
+}
+
+
+  header{
+    padding-bottom:20px;
+  }
+
+  #showcase h1{
+    margin-top:40px;
+  }
+
+}
     </style>
 </head>
 <body id="app-layout">
@@ -62,9 +122,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="/">
-                Good Shepherd Food Pantry
-            </a>
+
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -73,8 +131,8 @@
                <li><a href="{% url 'portfolio:item_list' %}">Inventory</a></li>
                 <li><a href="{% url 'portfolio:employee_list' %}">Manage Employees</a></li>
                 <li><a href="{% url 'portfolio:donor_list' %}">Manage Donors</a></li>
-                <li><a href="{% url 'portfolio:donor_list' %}">Record Client Visit</a></li>
-                <li><a href="{% url 'portfolio:donor_list' %}">Checkout</a></li>
+                <li><a href="{#}">Record Client Visit</a></li>
+                <li><a href="{#}">Checkout</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
