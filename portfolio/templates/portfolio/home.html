@@ -1,0 +1,45 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+{% block content %}
+            {% if user.is_authenticated %}
+                <div class="page-container">
+                    <h2 class="top-menu">Hello {{ user.username }},</h2>
+                    <p>Together we end hunger.</p>
+
+                </div>
+            {% endif %}
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="links">
+                            <!-- Example row of columns -->
+                            <div class="row">
+                                        <div class="caption">
+                                            <h2>Client</h2>
+                                            <p>Together we can end hunger!</p>
+                                            <p><a class="btn btn-primary" href="{% url 'portfolio:client_list' %}"
+                                                  role="button">Info</a></p>
+                                        </div>
+                                <div class="col-md-3">
+                                            <h2>Employee</h2>
+                                            <p>.</p>
+                                            <p><a class="btn btn-primary" href="{% url 'portfolio:employee_list' %}"
+                                                  role="button">Info</a></p>
+                                </div>
+                                <div class="col-md-3">
+                                            <h2>Donor</h2>
+                                            <p>Be a cheerful giver.</p>
+                                            <p><a class="btn btn-primary" href="{% url 'portfolio:donor_list' %}"
+                                                  role="button">Info</a></p>
+                                </div>
+                                <div class="col-md-3">
+                                            <h2>Item</h2>
+                                            <p>.</p>
+                                            <p><a class="btn btn-primary" href="{% url 'portfolio:item_list' %}"
+                                                  role="button">Info</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}
